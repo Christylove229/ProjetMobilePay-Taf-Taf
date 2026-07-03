@@ -1,0 +1,48 @@
+{% extends "accounts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Tableau de bord" %} - TAF-TAF{% endblock %}
+
+{% block content %}
+    <h1>{% blocktrans with nom=compte.utilisateur.username %}Bienvenue, {{ nom }} !{% endblocktrans %}</h1>
+
+    <div class="balance-card">
+        <div class="label">{% trans "Solde principal" %}</div>
+        <div class="amount">{{ compte.solde }} FCFA</div>
+        <div class="sub">{% blocktrans with tel=compte.telephone %}Numéro : {{ tel }}{% endblocktrans %}</div>
+        <div class="sub">{% blocktrans with solde=compte.solde_epargne %}Épargne : {{ solde }} FCFA{% endblocktrans %}</div>
+    </div>
+
+    <div class="nav-grid">
+        <a href="{% url 'retrait' %}"><i class="bi bi-cash-coin"></i>{% trans "Retrait" %}</a>
+        <a href="{% url 'paiement_facture' %}"><i class="bi bi-receipt"></i>{% trans "Facture" %}</a>
+        <a href="{% url 'paiement_marchand' %}"><i class="bi bi-shop"></i>{% trans "Marchand" %}</a>
+        <a href="{% url 'epargne' %}"><i class="bi bi-piggy-bank-fill"></i>{% trans "Épargne" %}</a>
+        <a href="{% url 'micro_credit' %}"><i class="bi bi-cash-stack"></i>{% trans "Crédit" %}</a>
+        <a href="{% url 'service_bancaire' %}"><i class="bi bi-bank"></i>{% trans "Banque" %}</a>
+    </div>
+
+    <h2>{% trans "Historique des transactions" %}</h2>
+    {% if transactions %}
+        {% for t in transactions %}
+            <div class="list-item">
+                {% if t.expediteur == compte %}
+                    <i class="bi bi-arrow-up-circle-fill"></i>
+                    <div>
+                        {% blocktrans with montant=t.montant tel=t.destinataire.telephone %}Envoyé {{ montant }} FCFA à {{ tel }}{% endblocktrans %}
+                        <div class="meta">{{ t.date|date:"d/m/Y H:i" }}</div>
+                    </div>
+                {% else %}
+                    <i class="bi bi-arrow-down-circle-fill"></i>
+                    <div>
+                        {% blocktrans with montant=t.montant tel=t.expediteur.telephone %}Reçu {{ montant }} FCFA de {{ tel }}{% endblocktrans %}
+                        <div class="meta">{{ t.date|date:"d/m/Y H:i" }}</div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <a href="{% url 'historique_transactions' %}" class="voir-plus-btn">{% trans "Voir plus" %}</a>
+    {% else %}
+        <p>{% trans "Aucune transaction pour le moment." %}</p>
+    {% endif %}
+{% endblock %}

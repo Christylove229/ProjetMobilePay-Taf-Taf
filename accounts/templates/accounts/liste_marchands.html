@@ -1,0 +1,55 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 10px; background: #f4f6f8; color: #222; max-width: 700px; margin-left: auto; margin-right: auto; }
+        h1 { color: #0a5c36; font-size: 1.1rem; margin: 6px 0; }
+        h2 { color: #0a5c36; font-size: 1.2rem; }
+        form p { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 4px; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+        button { background: #0a5c36; color: white; border: none; padding: 12px 22px; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; max-width: 300px; }
+        button:hover { background: #084526; }
+        a { color: #0a5c36; text-decoration: none; }
+        .card { background: white; border-radius: 8px; padding: 15px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 15px 0; }
+        .nav-grid a { background: white; border-radius: 8px; padding: 14px 8px; text-align: center; font-size: 0.9rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: block; }
+        .nav-grid a:hover { background: #eafaf1; }
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+            .nav-grid { grid-template-columns: repeat(2, 1fr); }
+            button { width: 100%; max-width: 100%; }
+        }
+        .desc-marchands { font-size: 0.75rem; margin: 4px 0 10px; }
+        .marchands-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .marchand-card { border: 1px solid #ccc; border-radius: 8px; padding: 6px; text-align: center; }
+        .marchand-card h3 { font-size: 0.72rem; margin: 2px 0; }
+        .marchand-card img { width: 72px; height: 72px; }
+        .marchand-card p { font-size: 0.65rem; margin: 2px 0; }
+        .marchand-card a { font-size: 0.7rem; font-weight: bold; }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>{% trans "Marchands" %} - TAF-TAF</title>
+</head>
+<body>
+    <h1>{% trans "Marchands partenaires" %}</h1>
+    <p class="desc-marchands">{% trans "Scannez le QR Code d'un marchand pour payer directement, ou cliquez sur \"Payer\" pour remplir le code manuellement." %}</p>
+
+    <div class="marchands-grid">
+    {% for m in marchands %}
+        <div class="marchand-card">
+            <h3>{{ m.nom }}</h3>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data={{ m.code }}" alt="QR {{ m.nom }}">
+            <p>{% blocktrans with code=m.code %}Code : {{ code }}{% endblocktrans %}</p>
+            <p><a href="{% url 'paiement_marchand' %}?code={{ m.code }}">{% trans "Payer ce marchand" %}</a></p>
+        </div>
+    {% endfor %}
+    </div>
+
+    <p><a href="{% url 'tableau_bord' %}">{% trans "Retour au tableau de bord" %}</a></p>
+</body>
+</html>

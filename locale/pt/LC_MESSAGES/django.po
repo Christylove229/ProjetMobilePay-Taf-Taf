@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-03 15:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\forms.py:7
+msgid "Nom d'utilisateur"
+msgstr "Nome de usuário"
+
+#: .\accounts\forms.py:8 .\accounts\forms.py:33
+msgid "Numéro de téléphone"
+msgstr "Número de telefone"
+
+#: .\accounts\forms.py:9
+msgid "Code PIN (4 chiffres)"
+msgstr "Código PIN (4 dígitos)"
+
+#: .\accounts\forms.py:10
+msgid "Confirmez le PIN"
+msgstr "Confirme o PIN"
+
+#: .\accounts\forms.py:18
+msgid "Le PIN doit contenir uniquement des chiffres."
+msgstr "O PIN deve conter apenas dígitos."
+
+#: .\accounts\forms.py:20
+msgid "Le PIN doit contenir exactement 4 chiffres."
+msgstr "O PIN deve conter exatamente 4 dígitos."
+
+#: .\accounts\forms.py:22
+msgid "Les deux PIN ne correspondent pas."
+msgstr "Os dois PIN não coincidem."
+
+#: .\accounts\forms.py:25
+msgid "Ce numéro de téléphone est déjà utilisé."
+msgstr "Este número de telefone já está em uso."
+
+#: .\accounts\forms.py:27
+msgid "Ce nom d'utilisateur est déjà pris."
+msgstr "Este nome de usuário já está em uso."
+
+#: .\accounts\forms.py:34
+msgid "Code PIN"
+msgstr "Código PIN"
+
+#: .\accounts\forms.py:36
+msgid "Numéro du destinataire"
+msgstr "Número do destinatário"
+
+#: .\accounts\forms.py:37
+msgid "Montant à envoyer"
+msgstr "Valor a enviar"
+
+#: .\accounts\forms.py:40
+msgid "Montant à retirer"
+msgstr "Valor a sacar"
+
+#: .\accounts\forms.py:51
+msgid "Choisir la facture"
+msgstr "Escolher a fatura"
+
+#: .\accounts\forms.py:52
+msgid "Numéro de facture / référence"
+msgstr "Número da fatura / referência"
+
+#: .\accounts\forms.py:53 .\accounts\forms.py:57
+msgid "Montant à payer"
+msgstr "Valor a pagar"
+
+#: .\accounts\forms.py:56
+msgid "Code marchand (QR)"
+msgstr "Pagamento a comerciante (QR)"
+
+#: .\accounts\forms.py:62
+msgid "Déposer dans mon épargne"
+msgstr "Depositar na minha poupança"
+
+#: .\accounts\forms.py:63
+msgid "Retirer de mon épargne"
+msgstr "Sacar da minha poupança"
+
+#: .\accounts\forms.py:65
+msgid "Action"
+msgstr "Ação"
+
+#: .\accounts\forms.py:66 .\accounts\forms.py:87
+msgid "Montant"
+msgstr "Valor"
+
+#: .\accounts\forms.py:70
+msgid "Montant du crédit demandé"
+msgstr "Valor do crédito solicitado"
+
+#: .\accounts\forms.py:74
+msgid "Deposer depuis ma banque vers TAF-TAF"
+msgstr "Depositar do meu banco para o TAF-TAF"
+
+#: .\accounts\forms.py:75
+msgid "Transferer vers ma banque"
+msgstr "Transferir para o meu banco"
+
+#: .\accounts\forms.py:84
+msgid "Type d'operation"
+msgstr "Tipo de operação"
+
+#: .\accounts\forms.py:85 .\accounts\templates\accounts\tableau_bord.html:25
+msgid "Banque"
+msgstr "Banco"
+
+#: .\accounts\forms.py:86
+msgid "Numero de compte bancaire"
+msgstr "Serviços bancários"
+
+#: .\accounts\templates\accounts\base.html:45
+msgid "Accueil"
+msgstr "Início"
+
+#: .\accounts\templates\accounts\base.html:49
+#: .\accounts\templates\accounts\liste_marchands.html:29
+msgid "Marchands"
+msgstr "Comerciantes"
+
+#: .\accounts\templates\accounts\base.html:53
+#: .\accounts\templates\accounts\envoyer_argent.html:44
+#: .\accounts\templates\accounts\tableau_bord.html:17
+msgid "Envoyer"
+msgstr "Enviar"
+
+#: .\accounts\templates\accounts\base.html:57
+#: .\accounts\templates\accounts\tableau_bord.html:24
+msgid "Alertes"
+msgstr "Alertas"
+
+#: .\accounts\templates\accounts\base.html:61
+msgid "Sortir"
+msgstr "Sair"
+
+#: .\accounts\templates\accounts\connexion.html:29
+msgid "Connexion"
+msgstr "Login"
+
+#: .\accounts\templates\accounts\connexion.html:32
+msgid "Connexion à TAF-TAF"
+msgstr "Login no TAF-TAF"
+
+#: .\accounts\templates\accounts\connexion.html:43
+msgid "Se connecter"
+msgstr "Sair"
+
+#: .\accounts\templates\accounts\connexion.html:46
+msgid "Créer un compte"
+msgstr "Criar uma conta"
+
+#: .\accounts\templates\accounts\envoyer_argent.html:29
+#: .\accounts\templates\accounts\envoyer_argent.html:32
+msgid "Envoyer de l'argent"
+msgstr "Enviar dinheiro"
+
+#: .\accounts\templates\accounts\envoyer_argent.html:33
+#: .\accounts\templates\accounts\micro_credit.html:33
+#: .\accounts\templates\accounts\paiement_facture.html:34
+#: .\accounts\templates\accounts\paiement_marchand.html:33
+#: .\accounts\templates\accounts\retrait.html:33
+#, python-format
+msgid "Votre solde actuel : %(solde)s FCFA"
+msgstr "Saldo: %(solde)s FCFA"
+
+#: .\accounts\templates\accounts\envoyer_argent.html:47
+#: .\accounts\templates\accounts\epargne.html:48
+#: .\accounts\templates\accounts\liste_marchands.html:44
+#: .\accounts\templates\accounts\micro_credit.html:48
+#: .\accounts\templates\accounts\notifications.html:35
+#: .\accounts\templates\accounts\paiement_facture.html:48
+#: .\accounts\templates\accounts\paiement_marchand.html:47
+#: .\accounts\templates\accounts\retrait.html:47
+#: .\accounts\templates\accounts\service_bancaire.html:45
+msgid "Retour au tableau de bord"
+msgstr "Voltar ao painel"
+
+#: .\accounts\templates\accounts\epargne.html:29
+#: .\accounts\templates\accounts\epargne.html:32
+msgid "Micro-épargne"
+msgstr "Micro-poupança"
+
+#: .\accounts\templates\accounts\epargne.html:33
+#, python-format
+msgid "Solde principal : %(solde)s FCFA"
+msgstr "Saldo de poupança: %(solde)s FCFA"
+
+#: .\accounts\templates\accounts\epargne.html:34
+#, python-format
+msgid "Solde épargne : %(solde)s FCFA"
+msgstr "Saldo de poupança: %(solde)s FCFA"
+
+#: .\accounts\templates\accounts\epargne.html:45
+#: .\accounts\templates\accounts\service_bancaire.html:42
+msgid "Valider"
+msgstr "Validar"
+
+#: .\accounts\templates\accounts\historique.html:4
+#: .\accounts\templates\accounts\historique.html:7
+#: .\accounts\templates\accounts\tableau_bord.html:28
+msgid "Historique des transactions"
+msgstr "Histórico de transações"
+
+#: .\accounts\templates\accounts\historique.html:9
+msgid "Retour"
+msgstr "Voltar"
+
+#: .\accounts\templates\accounts\historique.html:17
+#: .\accounts\templates\accounts\tableau_bord.html:35
+#, python-format
+msgid "Envoyé %(montant)s FCFA à %(tel)s"
+msgstr "Enviado %(montant)s FCFA para %(tel)s"
+
+#: .\accounts\templates\accounts\historique.html:23
+#: .\accounts\templates\accounts\tableau_bord.html:41
+#, python-format
+msgid "Reçu %(montant)s FCFA de %(tel)s"
+msgstr "Recebido %(montant)s FCFA de %(tel)s"
+
+#: .\accounts\templates\accounts\historique.html:30
+#: .\accounts\templates\accounts\tableau_bord.html:49
+msgid "Aucune transaction pour le moment."
+msgstr "Nenhuma transação por enquanto."
+
+#: .\accounts\templates\accounts\inscription.html:29
+msgid "Inscription"
+msgstr "Cadastro"
+
+#: .\accounts\templates\accounts\inscription.html:32
+msgid "Créer un compte TAF-TAF"
+msgstr "Criar uma conta TAF-TAF"
+
+#: .\accounts\templates\accounts\inscription.html:43
+msgid "Créer mon compte"
+msgstr "Criar minha conta"
+
+#: .\accounts\templates\accounts\liste_marchands.html:32
+msgid "Marchands partenaires"
+msgstr "Comerciantes parceiros"
+
+#: .\accounts\templates\accounts\liste_marchands.html:33
+#, fuzzy
+#| msgid ""
+#| "Scannez le QR Code d'un marchand pour payer directement, ou cliquez sur "
+#| "\"Payer\" pour remplir le code manuellement."
+msgid ""
+"Scannez le QR Code d'un marchand pour payer directement, ou cliquez sur \\"
+msgstr ""
+"Escaneie o código QR de um comerciante para pagar diretamente, ou clique em "
+"\"Pagar\" para inserir o código manualmente."
+
+#: .\accounts\templates\accounts\liste_marchands.html:39
+#, python-format
+msgid "Code : %(code)s"
+msgstr "Código: %(code)s"
+
+#: .\accounts\templates\accounts\liste_marchands.html:40
+msgid "Payer ce marchand"
+msgstr "Pagar a este comerciante"
+
+#: .\accounts\templates\accounts\micro_credit.html:29
+msgid "Micro-crédit"
+msgstr "Micro-crédito"
+
+#: .\accounts\templates\accounts\micro_credit.html:32
+msgid "Demande de micro-crédit"
+msgstr "Micro-crédito"
+
+#: .\accounts\templates\accounts\micro_credit.html:34
+msgid "Montant disponible : entre 1000 et 50000 FCFA"
+msgstr "Valor disponível: entre 1000 e 50000 FCFA"
+
+#: .\accounts\templates\accounts\micro_credit.html:45
+msgid "Demander"
+msgstr "Solicitar"
+
+#: .\accounts\templates\accounts\notifications.html:20
+msgid "Notifications"
+msgstr "Notificações"
+
+#: .\accounts\templates\accounts\notifications.html:23
+msgid "Mes notifications"
+msgstr "Notificações"
+
+#: .\accounts\templates\accounts\notifications.html:32
+msgid "Aucune notification pour le moment."
+msgstr "Nenhuma transação por enquanto."
+
+#: .\accounts\templates\accounts\paiement_facture.html:30
+#: .\accounts\templates\accounts\paiement_facture.html:33
+msgid "Paiement de facture"
+msgstr "Pagamento de fatura"
+
+#: .\accounts\templates\accounts\paiement_facture.html:45
+#: .\accounts\templates\accounts\paiement_marchand.html:44
+msgid "Payer"
+msgstr "Pagar"
+
+#: .\accounts\templates\accounts\paiement_marchand.html:29
+msgid "Paiement marchand"
+msgstr "Pagamento a comerciante"
+
+#: .\accounts\templates\accounts\paiement_marchand.html:32
+msgid "Paiement marchand (QR Code)"
+msgstr "Pagamento a comerciante (Código QR)"
+
+#: .\accounts\templates\accounts\retrait.html:29
+#: .\accounts\templates\accounts\tableau_bord.html:18
+msgid "Retrait"
+msgstr "Levantamento"
+
+#: .\accounts\templates\accounts\retrait.html:32
+msgid "Retrait d'argent"
+msgstr "Enviar dinheiro"
+
+#: .\accounts\templates\accounts\retrait.html:44
+msgid "Retirer"
+msgstr "Sacar"
+
+#: .\accounts\templates\accounts\service_bancaire.html:26
+#: .\accounts\templates\accounts\service_bancaire.html:29
+msgid "Services bancaires"
+msgstr "Serviços bancários"
+
+#: .\accounts\templates\accounts\tableau_bord.html:4
+#, fuzzy
+#| msgid "Retour au tableau de bord"
+msgid "Tableau de bord"
+msgstr "Voltar ao painel"
+
+#: .\accounts\templates\accounts\tableau_bord.html:7
+#, python-format
+msgid "Bienvenue, %(nom)s !"
+msgstr "Bem-vindo, %(nom)s!"
+
+#: .\accounts\templates\accounts\tableau_bord.html:10
+msgid "Solde principal"
+msgstr "Saldo principal"
+
+#: .\accounts\templates\accounts\tableau_bord.html:12
+#, python-format
+msgid "Numéro : %(tel)s"
+msgstr "Número: %(tel)s"
+
+#: .\accounts\templates\accounts\tableau_bord.html:13
+#, python-format
+msgid "Épargne : %(solde)s FCFA"
+msgstr "Poupança: %(solde)s FCFA"
+
+#: .\accounts\templates\accounts\tableau_bord.html:19
+msgid "Facture"
+msgstr "Fatura"
+
+#: .\accounts\templates\accounts\tableau_bord.html:20
+msgid "Marchand"
+msgstr "Comerciante"
+
+#: .\accounts\templates\accounts\tableau_bord.html:21
+msgid "QR Codes"
+msgstr "Códigos QR"
+
+#: .\accounts\templates\accounts\tableau_bord.html:22
+msgid "Épargne"
+msgstr "Poupança"
+
+#: .\accounts\templates\accounts\tableau_bord.html:23
+msgid "Crédit"
+msgstr "Crédito"
+
+#: .\accounts\templates\accounts\tableau_bord.html:47
+msgid "Voir plus"
+msgstr "Ver mais"
+
+#: .\accounts\views.py:49 .\accounts\views.py:51
+msgid "Numéro de téléphone ou PIN incorrect."
+msgstr "Número de telefone ou PIN incorreto."
+
+#: .\accounts\views.py:110
+#, python-format
+msgid "Vous avez envoyé %(montant)s FCFA à %(dest)s."
+msgstr "Você enviou %(montant)s FCFA para %(dest)s."
+
+#: .\accounts\views.py:111
+#, python-format
+msgid "Vous avez reçu %(montant)s FCFA de %(tel)s."
+msgstr "Você recebeu %(montant)s FCFA de %(tel)s."
+
+#: .\accounts\views.py:312
+#, python-format
+msgid "Depot de %(montant)s FCFA depuis %(banque)s recu."
+msgstr "Depósito de %(montant)s FCFA de %(banque)s recebido."
+
+#: .\accounts\views.py:327
+#, python-format
+msgid "Virement de %(montant)s FCFA vers %(banque)s effectue."
+msgstr "Transferência de %(montant)s FCFA para %(banque)s efetuada."
+
+#, python-format
+#~ msgid "Solde : %(solde)s FCFA"
+#~ msgstr "Saldo: %(solde)s FCFA"
+
+#~ msgid "Paiement marchand (QR)"
+#~ msgstr "Pagamento a comerciante (QR)"
+
+#, fuzzy
+#~| msgid "Voir les marchands (QR Code)"
+#~ msgid "Voir les marchands"
+#~ msgstr "Ver comerciantes (Código QR)"
+
+#~ msgid "Se déconnecter"
+#~ msgstr "Sair"

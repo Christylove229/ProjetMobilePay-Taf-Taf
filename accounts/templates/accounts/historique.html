@@ -1,0 +1,32 @@
+{% extends "accounts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Historique des transactions" %} - TAF-TAF{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Historique des transactions" %}</h1>
+
+    <a href="{% url 'tableau_bord' %}" class="retour-link">&larr; {% trans "Retour" %}</a>
+
+    {% if transactions %}
+        {% for t in transactions %}
+            <div class="list-item">
+                {% if t.expediteur == compte %}
+                    <i class="bi bi-arrow-up-circle-fill"></i>
+                    <div>
+                        {% blocktrans with montant=t.montant tel=t.destinataire.telephone %}Envoyé {{ montant }} FCFA à {{ tel }}{% endblocktrans %}
+                        <div class="meta">{{ t.date|date:"d/m/Y H:i" }}</div>
+                    </div>
+                {% else %}
+                    <i class="bi bi-arrow-down-circle-fill"></i>
+                    <div>
+                        {% blocktrans with montant=t.montant tel=t.expediteur.telephone %}Reçu {{ montant }} FCFA de {{ tel }}{% endblocktrans %}
+                        <div class="meta">{{ t.date|date:"d/m/Y H:i" }}</div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "Aucune transaction pour le moment." %}</p>
+    {% endif %}
+{% endblock %}

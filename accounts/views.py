@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from django.db import OperationalError, ProgrammingError
 from django.utils.translation import gettext as _
 
 from django.contrib import messages
@@ -32,31 +33,35 @@ def inscription(request):
 
 
 
-            # Créer l'utilisateur Django (le mot de passe = le PIN, pour l'instant)
+            try:
+                # Créer l'utilisateur Django (le mot de passe = le PIN, pour l'instant)
 
-            user = User.objects.create_user(username=nom_utilisateur, password=pin)
-
-
-
-            # Créer le compte associé
-
-            Compte.objects.create(
-
-                utilisateur=user,
-
-                telephone=telephone,
-
-                pin=pin,
-
-                solde=0
-
-            )
+                user = User.objects.create_user(username=nom_utilisateur, password=pin)
 
 
 
-            messages.success(request, "Compte créé avec succès ! Vous pouvez vous connecter.")
+                # Créer le compte associé
 
-            return redirect('inscription')
+                Compte.objects.create(
+
+                    utilisateur=user,
+
+                    telephone=telephone,
+
+                    pin=pin,
+
+                    solde=0
+
+                )
+
+
+
+                messages.success(request, "Compte créé avec succès ! Vous pouvez vous connecter.")
+
+                return redirect('inscription')
+            except (OperationalError, ProgrammingError):
+                messages.error(request, _("La base de données n'est pas encore prête. Veuillez réessayer dans quelques secondes."))
+                return render(request, 'accounts/inscription.html', {'form': form})
 
     else:
 
@@ -99,6 +104,8 @@ def connexion(request):
             except Compte.DoesNotExist:
 
                 messages.error(request, _("Numéro de téléphone ou PIN incorrect."))
+            except (OperationalError, ProgrammingError):
+                messages.error(request, _("La base de données n'est pas encore prête. Veuillez réessayer dans quelques secondes."))
 
     else:
 

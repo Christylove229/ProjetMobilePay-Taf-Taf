@@ -6,7 +6,8 @@ services:
     plan: starter
     branch: main
     buildCommand: pip install -r requirements.txt
-    startCommand: sh -c "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn mobilepay.wsgi:application --log-file -"
+    releaseCommand: python manage.py migrate && python manage.py collectstatic --noinput
+    startCommand: gunicorn mobilepay.wsgi:application --log-file -
     envVars:
       - key: DJANGO_DEBUG
         value: "False"

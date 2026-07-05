@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: mobilepay-web
+    env: python
+    region: oregon
+    plan: starter
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn mobilepay.wsgi:application --log-file -
+    envVars:
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: "mobilepay-web.onrender.com"
+      - key: DJANGO_SECRET_KEY
+        fromSecret: RENDER_DJANGO_SECRET_KEY
+    autoDeploy: true
+    healthCheckPath: /
+    pullRequestPreviews: false
+
+  - type: postgres
+    name: mobilepay-db
+    plan: starter
+    databaseName: mobilepay
+    version: 15
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: mobilepay-db

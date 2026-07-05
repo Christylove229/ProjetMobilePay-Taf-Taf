@@ -11,7 +11,7 @@ services:
       - key: DJANGO_DEBUG
         value: "False"
       - key: DJANGO_ALLOWED_HOSTS
-        value: "mobilepay-web.onrender.com"
+        value: "TAF-TAF.onrender.com"
       - key: DJANGO_SECRET_KEY
         fromSecret: RENDER_DJANGO_SECRET_KEY
     autoDeploy: true
